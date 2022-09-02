@@ -3,8 +3,9 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8" />
-    <title>CS279 HW0 Notes App</title>
+    <title>CS279 HW0 Todo App</title>
     <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/share.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -19,14 +20,32 @@
   <body>
     <div onclick="console.log(hello)" id="header">
       <div id="instructions">
-        <header id="title">Notesy</header>
+        <header id="title">Todosy</header>
+
         <ol>
-          <li>Create a note by clicking the +</li>
-          <li>Delete a note by double clicking the note</li>
+          <li>Create a todo by clicking the +</li>
+          <li>Delete a todo by double clicking the todo</li>
           <li>Start getting organized!</li>
+          <li><button class="view-modal">Share notes</button></li>
         </ol>
       </div>
       <img src="../imgs/notes.jpeg" alt="notes image" />
+    </div>
+
+    <div class="popup">
+      <header>
+        <span>Share Modal</span>
+        <div class="close"><i class="uil uil-times"></i></div>
+      </header>
+      <div class="content">
+        <p>Copy and share url</p>
+        <div class="field">
+          <i class="url-icon uil uil-link"></i>
+
+          <input id="input" type="text" readonly />
+          <button>Copy</button>
+        </div>
+      </div>
     </div>
     <!-- Button for adding notes -->
     <div id="notes-section">
@@ -35,4 +54,37 @@
   </body>
   <!-- Here is we connect our javascript file to this html file -->
   <script src="../js/functionality.js"></script>
+  <!-- Script for handling popup, you don't have to create a new file -->
+  <script>
+    // Set share url to current url
+    document.querySelector("input").defaultValue = window.location.href;
+
+    const viewBtn = document.querySelector(".view-modal"),
+      popup = document.querySelector(".popup"),
+      close = popup.querySelector(".close"),
+      field = popup.querySelector(".field"),
+      input = field.querySelector("input"),
+      copy = field.querySelector("button");
+
+    viewBtn.onclick = () => {
+      popup.classList.toggle("show");
+    };
+    close.onclick = () => {
+      viewBtn.click();
+    };
+
+    copy.onclick = () => {
+      input.select(); //select input value
+      if (document.execCommand("copy")) {
+        //if the selected text copy
+        field.classList.add("active");
+        copy.innerText = "Copied";
+        setTimeout(() => {
+          window.getSelection().removeAllRanges(); //remove selection from document
+          field.classList.remove("active");
+          copy.innerText = "Copy";
+        }, 3000);
+      }
+    };
+  </script>
 </html>

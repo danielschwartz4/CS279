@@ -27,7 +27,7 @@ function createNoteElement(id, content) {
   const element = document.createElement("textarea");
   element.classList.add("note");
   element.value = content;
-  element.placeholder = "Empty Sticky Note";
+  element.placeholder = "Empty Todo";
 
   // When there is a change to the text area, we update the note and save it to local storage
   element.addEventListener("change", () => {
