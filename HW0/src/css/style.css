@@ -3,11 +3,6 @@
 /* An API that returns cool fonts */
 @import url("https://fonts.googleapis.com/css?family=Lato:400,400i,700");
 
-body {
-  margin: 0;
-  background: #009578;
-}
-
 /* using a # prefix references the html id parameter */
 #notes-section {
   /* A grid display allows for easy display of our notes */

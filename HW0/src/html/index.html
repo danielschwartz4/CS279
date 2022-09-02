@@ -1,15 +1,19 @@
+<!-- HTML boilerplate -->
 <!DOCTYPE html>
 
 <html lang="en" dir="ltr">
   <head>
+    <!-- Specify our encoding -->
     <meta charset="utf-8" />
     <title>CS279 HW0 Todo App</title>
+    <!-- import our css files and libraries -->
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/share.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <!-- Set viewport width -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
@@ -18,10 +22,10 @@
   </head>
   <!-- Each of the HTML tags below is a component that helps with a type of styling (e.g. list, header, etc.) -->
   <body>
-    <div onclick="console.log(hello)" id="header">
+    <div id="header">
       <div id="instructions">
         <header id="title">Todosy</header>
-
+        <!-- For creating numbered lists -->
         <ol>
           <li>Create a todo by clicking the +</li>
           <li>Delete a todo by double clicking the todo</li>
@@ -29,9 +33,11 @@
           <li><button class="view-modal">Share notes</button></li>
         </ol>
       </div>
-      <img src="../imgs/notes.jpeg" alt="notes image" />
+      <!-- import header image -->
+      <img src="../imgs/notes.jpeg" alt="todo image" />
     </div>
 
+    <!-- For our share notes Popup -->
     <div class="popup">
       <header>
         <span>Share Modal</span>
@@ -41,7 +47,6 @@
         <p>Copy and share url</p>
         <div class="field">
           <i class="url-icon uil uil-link"></i>
-
           <input id="input" type="text" readonly />
           <button>Copy</button>
         </div>
@@ -56,9 +61,10 @@
   <script src="../js/functionality.js"></script>
   <!-- Script for handling popup, you don't have to create a new file -->
   <script>
-    // Set share url to current url
+    // Set share url to current url by using window.location.href
     document.querySelector("input").defaultValue = window.location.href;
 
+    // Querying elements based on their id
     const viewBtn = document.querySelector(".view-modal"),
       popup = document.querySelector(".popup"),
       close = popup.querySelector(".close"),
@@ -73,6 +79,7 @@
       viewBtn.click();
     };
 
+    // Copies url
     copy.onclick = () => {
       input.select(); //select input value
       if (document.execCommand("copy")) {
