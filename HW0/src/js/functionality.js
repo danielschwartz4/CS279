@@ -23,28 +23,20 @@ function saveNotes(notes) {
 
 // Primary function for handling our helper functions
 function createNoteElement(id, content) {
-  // const element = document.createElement("div");
+  // Create a dom element when that is our new note
   const element = document.createElement("textarea");
-
   element.classList.add("note");
   element.value = content;
   element.placeholder = "Empty Sticky Note";
 
-  // element.innerHTML = "<textarea  class='text-area'/>";
-  // const deleteNote = `deleteNote(${(id, element)})`;
-
-  // element.innerHTML += `<div onclick=deleteNote(${
-  //   (id, element)
-  // }) style='display: flex'><i id='trash' class='fa fa-trash-o' style='font-size: 24px'></i></div>`;
-  // element.addEventListener("change", () => {
-  //   updateNote(id, element.value);
-  // });
-
+  // When there is a change to the text area, we update the note and save it to local storage
   element.addEventListener("change", () => {
     updateNote(id, element.value);
   });
 
+  // On double click of the note, we delete the element
   element.addEventListener("dblclick", () => {
+    // Since deleting a note can be risky, we want to issue a confirmation box first
     const doDelete = confirm(
       "Are you sure you wish to delete this sticky note?"
     );
@@ -57,6 +49,7 @@ function createNoteElement(id, content) {
   return element;
 }
 
+// Add note function
 function addNote() {
   const notes = getNotes();
   const noteObject = {
@@ -66,13 +59,17 @@ function addNote() {
     content: "",
   };
 
+  // Call function from above to create a new note element
   const noteElement = createNoteElement(noteObject.id, noteObject.content);
+  // Insert the element in the notes section grid
   notesContainer.insertBefore(noteElement, addNoteButton);
 
+  // Save the notes object which now includes our new note
   notes.push(noteObject);
   saveNotes(notes);
 }
 
+// Updating is necessary to save our new text to local storage
 function updateNote(id, newContent) {
   const notes = getNotes();
   const targetNote = notes.filter((note) => note.id == id)[0];
@@ -81,6 +78,7 @@ function updateNote(id, newContent) {
   saveNotes(notes);
 }
 
+// To delete a note, we first update the notes object using the deleted note's id, then we remove the note from the dom
 function deleteNote(id, element) {
   const notes = getNotes().filter((note) => note.id != id);
 
