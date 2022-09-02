@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>CS279 HW0 Notes App</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+    />
+  </head>
+  <!-- Each of the HTML tags below is a component that helps with a type of styling (e.g. list, header, etc.) -->
+  <body>
+    <div onclick="console.log(hello)" id="header">
+      <div id="instructions">
+        <header id="title">Notesy</header>
+        <ol>
+          <li>Create a note by clicking the +</li>
+          <li>Delete a note by double clicking the note</li>
+          <li>Start getting organized!</li>
+        </ol>
+      </div>
+      <img src="../imgs/notes.jpeg" alt="notes image" />
+    </div>
+    <!-- Button for adding notes -->
+    <div id="notes-section">
+      <button class="add-note" type="button">+</button>
+    </div>
+  </body>
+  <!-- Here is we connect our javascript file to this html file -->
+  <script src="../js/functionality.js"></script>
+</html>
