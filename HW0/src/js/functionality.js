@@ -11,6 +11,7 @@ getNotes().forEach((note) => {
 // "listens" for the user to click the add note button and then executes the addNote function
 addNoteButton.addEventListener("click", () => addNote());
 
+// Parse the data stored in localstorage. Local storage is how we save our notes (e.g. save on refresh)
 function getNotes() {
   return JSON.parse(localStorage.getItem("stickynotes-notes") || "[]");
 }
