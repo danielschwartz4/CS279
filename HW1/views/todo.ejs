@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- Boilerplate and tags same as assignment 1. Will only comment new stuff -->
 <head>
   <title>Todo App</title>
   <link rel="stylesheet" href="/static/stylesheets/style.css" type="text/css" />
@@ -22,12 +23,15 @@
         <button type="submit"><span class="fas fa-plus"></span></button>
       </form>
       <ul class="todo-list">
+        <!-- Displays todoTasks passed in as prop from API request and lists them below text box -->
         <% todoTasks.forEach(details => { %>
         <li class="todo-list-item">
           <div class="todo-list-item-name"><%= details.content %></div>
+          <!-- Clicking edit executes API update method by fetching url with id in details object -->
           <a href="/edit/<%= details._id %>" class="edit">
             <span class="fas fa-edit"></span>
           </a>
+          <!-- Clicking remove does the same -->
           <a href="/remove/<%= details._id %>" class="remove">
             <span class="fas fa-times"></span>
           </a>

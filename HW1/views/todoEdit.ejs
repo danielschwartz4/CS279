@@ -22,15 +22,19 @@
         <button type="submit"><span class="fas fa-plus"></span></button>
       </form>
       <ul class="todo-list">
+        <!-- Checks id the object's id equals the id passed in as prop and then edits accordingly -->
         <% todoTasks.forEach(details => { %> <% if (details._id == idTask) { %>
         <li class="todo-list-item">
+          <!-- Post method to update by fetching url with id -->
           <form action="/edit/<%= details._id %>" method="POST">
+            <!-- Replaces Text with new details content -->
             <input type="text" value="<%= details.content %>" name="content" />
             <button type="submit">Confirm</button>
             <a href="/" class="cancel">Cancel</a>
           </form>
         </li>
         <% } else { %>
+        <!-- If object's id doesn't equal the id passed in then do nothing-->
         <li class="todo-list-item">
           <div class="todo-list-item-name"><%= details.content %></div>
           <a href="/edit/<%= details._id %>" class="edit">
