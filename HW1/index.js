@@ -2,7 +2,6 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
-const { MongoClient, ServerApiVersion } = require("mongodb");
 dotenv.config();
 
 //models
@@ -13,8 +12,6 @@ app.use("/static", express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 
 //connection to db
-// !! Deprecated
-// mongoose.set("useFindAndModify", false);
 const db = mongoose.connect(
   process.env.DB_CONNECT,
   { useNewUrlParser: true },
