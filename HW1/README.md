@@ -1,10 +1,11 @@
 How to use:
 
 1. Clone github repo
-2. Add your own mongodb url to a .env file as "export DB_CONNECT=MY_KEY"
-3. Source the .env file
-4. run "npm start"
-5. open localhost:3000
+2. Run "npm i" to install node modules
+3. Add your own mongodb url to a .env file as "export DB_CONNECT=MY_KEY"
+4. Source the .env file
+5. run "npm start
+7. open localhost:3000
 
 Reflection: What are the significant software concepts that this combination of technologies has that plain HTML, CSS, and JS does not? Or that they handle significantly differently?
 
