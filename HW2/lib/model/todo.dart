@@ -5,13 +5,17 @@ class ToDo {
   bool isDone;
 
   ToDo({
+    // ID for identification of todo
     required this.id,
+    // text content
     required this.todoText,
+    // boolean for crossing off todo
     this.isDone = false,
   });
 
 // To display in home.dart
   static List<ToDo> todoList() {
+    // Start off with one note
     return [
       ToDo(
           id: '01',

@@ -1,5 +1,5 @@
+// A screen is basically a page, and we only need the home page for this app
 import 'package:flutter/material.dart';
-
 import '../model/todo.dart';
 import '../constants/colors.dart';
 import '../widgets/todo_item.dart';

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../model/todo.dart';
 import '../constants/colors.dart';
 
@@ -16,12 +15,13 @@ class ToDoItem extends StatelessWidget {
   }) : super(key: key);
 
   @override
+  // Component/widget for each individual Todo Item
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(bottom: 20),
       child: ListTile(
         onTap: () {
-          // print('Clicked on Todo Item.');
+          // prop to call _handleToDoChanged to cross off when clicked
           onToDoChanged(todo);
         },
         shape: RoundedRectangleBorder(
@@ -41,6 +41,7 @@ class ToDoItem extends StatelessWidget {
             decoration: todo.isDone ? TextDecoration.lineThrough : null,
           ),
         ),
+        // All CSS stuff, pretty intuitive
         trailing: Container(
           padding: EdgeInsets.all(0),
           margin: EdgeInsets.symmetric(vertical: 12),
@@ -53,9 +54,10 @@ class ToDoItem extends StatelessWidget {
           child: IconButton(
             color: Colors.white,
             iconSize: 18,
+            // Delete icon
             icon: Icon(Icons.delete),
             onPressed: () {
-              // print('Clicked on delete icon');
+              // Delete todo on trash clicked
               onDeleteItem(todo.id);
             },
           ),
