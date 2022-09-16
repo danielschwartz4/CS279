@@ -3,8 +3,9 @@ How to use:
 1. Clone github repo
 2. Navigate to the main.dart file in the lib directory
 3. Run the file by clicking the "Run Code" arrow button in vscode on any device interface
+4. Interface with the app by adding, checking, and deleting notes
 
-You will see folders for each device type which are generated on flutter app creation. They all include boiler plate for what that app must include, and then they include a reference to the flutter dart code. the important code is in the lib folder.
+You will see folders for each device type which are generated on flutter app creation. They all include boiler plate for what that app must include, and then they also importantly include a reference to the flutter dart code. The important code is in the lib folder.
 
 Reflection: What are the significant software concepts that this combination of technologies has that each previous set of technologies did not? Or that they handle significantly differently?
 
