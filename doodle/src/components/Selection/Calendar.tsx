@@ -12,45 +12,45 @@ const Calendar: React.FC<CalendarProps> = ({ isClicked, setIsClicked }) => {
     <Flex>
       <CalendarEntry
         day="Mon"
-        date={4}
+        date={3}
         endTime="9am"
-        month={6}
+        month={10}
+        startTime="7am"
+        isClicked={isClicked}
+        setIsClicked={setIsClicked}
+      />
+      <CalendarEntry
+        day="Tues"
+        date={4}
+        endTime="2pm"
+        month={10}
+        startTime="12pm"
+        isClicked={isClicked}
+        setIsClicked={setIsClicked}
+      />
+      <CalendarEntry
+        day="Thu"
+        date={6}
+        endTime="1pm"
+        month={10}
+        startTime="8am"
+        isClicked={isClicked}
+        setIsClicked={setIsClicked}
+      />
+      <CalendarEntry
+        day="Fri"
+        date={7}
+        endTime="11am"
+        month={10}
         startTime="7am"
         isClicked={isClicked}
         setIsClicked={setIsClicked}
       />
       <CalendarEntry
         day="Mon"
-        date={4}
+        date={10}
         endTime="9am"
-        month={6}
-        startTime="7am"
-        isClicked={isClicked}
-        setIsClicked={setIsClicked}
-      />
-      <CalendarEntry
-        day="Mon"
-        date={4}
-        endTime="9am"
-        month={6}
-        startTime="7am"
-        isClicked={isClicked}
-        setIsClicked={setIsClicked}
-      />
-      <CalendarEntry
-        day="Mon"
-        date={4}
-        endTime="9am"
-        month={6}
-        startTime="7am"
-        isClicked={isClicked}
-        setIsClicked={setIsClicked}
-      />
-      <CalendarEntry
-        day="Mon"
-        date={4}
-        endTime="9am"
-        month={6}
+        month={10}
         startTime="7am"
         isClicked={isClicked}
         setIsClicked={setIsClicked}
