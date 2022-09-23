@@ -2,9 +2,12 @@ import { Flex } from "@chakra-ui/react";
 import React from "react";
 import CalendarEntry from "./CalendarEntry";
 
-interface CalendarProps {}
+interface CalendarProps {
+  isClicked: number;
+  setIsClicked: React.Dispatch<React.SetStateAction<number>>;
+}
 
-const Calendar: React.FC<CalendarProps> = ({}) => {
+const Calendar: React.FC<CalendarProps> = ({ isClicked, setIsClicked }) => {
   return (
     <Flex>
       <CalendarEntry
@@ -13,35 +16,45 @@ const Calendar: React.FC<CalendarProps> = ({}) => {
         endTime="9am"
         month={6}
         startTime="7am"
-      ></CalendarEntry>
+        isClicked={isClicked}
+        setIsClicked={setIsClicked}
+      />
       <CalendarEntry
         day="Mon"
         date={4}
         endTime="9am"
         month={6}
         startTime="7am"
-      ></CalendarEntry>
+        isClicked={isClicked}
+        setIsClicked={setIsClicked}
+      />
       <CalendarEntry
         day="Mon"
         date={4}
         endTime="9am"
         month={6}
         startTime="7am"
-      ></CalendarEntry>
+        isClicked={isClicked}
+        setIsClicked={setIsClicked}
+      />
       <CalendarEntry
         day="Mon"
         date={4}
         endTime="9am"
         month={6}
         startTime="7am"
-      ></CalendarEntry>
+        isClicked={isClicked}
+        setIsClicked={setIsClicked}
+      />
       <CalendarEntry
         day="Mon"
         date={4}
         endTime="9am"
         month={6}
         startTime="7am"
-      ></CalendarEntry>
+        isClicked={isClicked}
+        setIsClicked={setIsClicked}
+      />
     </Flex>
   );
 };

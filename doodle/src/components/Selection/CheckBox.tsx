@@ -20,8 +20,8 @@ const CheckBox: React.FC<CheckBoxProps> = ({ type }) => {
           : "gray.200"
       }
       m={"auto"}
-      h={"56px"}
-      w={"80px"}
+      h={"50px"}
+      w={"82px"}
     >
       {type === "yes" ? (
         <BsCheckAll size={"lg"} />
