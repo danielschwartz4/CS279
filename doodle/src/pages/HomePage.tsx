@@ -6,7 +6,7 @@ interface HomeProps {}
 
 const Home: React.FC<HomeProps> = ({}) => {
   return (
-    <Center mt={"80"}>
+    <Center minH={"100vh"} bgColor={"gray.200"}>
       <SelectionMain></SelectionMain>
     </Center>
   );

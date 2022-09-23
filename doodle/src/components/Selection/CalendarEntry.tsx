@@ -1,5 +1,5 @@
 import { Box, Checkbox, VStack } from "@chakra-ui/react";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 interface CalendarEntryProps {
   day: string;

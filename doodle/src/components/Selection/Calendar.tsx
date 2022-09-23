@@ -35,6 +35,13 @@ const Calendar: React.FC<CalendarProps> = ({}) => {
         month={6}
         startTime="7am"
       ></CalendarEntry>
+      <CalendarEntry
+        day="Mon"
+        date={4}
+        endTime="9am"
+        month={6}
+        startTime="7am"
+      ></CalendarEntry>
     </Flex>
   );
 };
