@@ -31,20 +31,12 @@ const CalendarEntry: React.FC<CalendarEntryProps> = (props) => {
 
   return (
     <VStack
-      onClick={() => {
-        checkState === "no"
-          ? setCheckState("yes")
-          : checkState === "yes"
-          ? setCheckState("maybe")
-          : setCheckState("no");
-      }}
       onMouseEnter={() => {
         setMouseOver(true);
       }}
       onMouseLeave={() => {
         setMouseOver(false);
       }}
-      cursor={"pointer"}
       backgroundColor={
         checkState === "yes"
           ? "#33a93399"

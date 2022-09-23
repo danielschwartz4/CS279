@@ -62,11 +62,21 @@ const SelectionMain: React.FC<SelectionProps> = ({}) => {
         <Button
           textColor={isClicked ? "white" : "gray.400"}
           bgColor={isClicked ? "blue.300" : "gray.200"}
+          cursor={isClicked ? "pointer" : "not-allowed"}
           mt={2}
           mr={8}
           w={"100px"}
         >
-          <Link to="/confirmation">Continue</Link>
+          {isClicked ? (
+            <Link
+              cursor={isClicked ? "pointer" : "not-allowed"}
+              to="/confirmation"
+            >
+              Continue
+            </Link>
+          ) : (
+            <Text>Continue</Text>
+          )}
         </Button>
       </Flex>
     </Box>
