@@ -4,14 +4,17 @@ import { BsCheck, BsCheckAll } from "react-icons/bs";
 import { HiOutlineX } from "react-icons/hi";
 import { checkType } from "./CalendarEntry";
 
+// typescript way to init type of props
 interface CheckBoxProps {
   type: checkType;
 }
 
+// Prop deconstruction for readability
 const CheckBox: React.FC<CheckBoxProps> = ({ type }) => {
   return (
     <Box
       borderRadius={2}
+      // Change color based on prop passed in
       bgColor={
         type === "yes"
           ? "#33a93399"

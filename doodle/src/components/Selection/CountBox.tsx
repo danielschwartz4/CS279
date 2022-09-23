@@ -1,3 +1,4 @@
+// Component to see how many people are available each day
 import { Box, Flex, Text } from "@chakra-ui/react";
 import React from "react";
 import { BsCheck } from "react-icons/bs";
@@ -12,6 +13,7 @@ const CountBox: React.FC<CountBoxProps> = ({ count }) => {
       <Flex textAlign={"center"}>
         <Flex mt={4} ml={6}>
           <BsCheck fontSize={"24px"} />
+          {/* Pass in count prop */}
           <Text>{count}</Text>
         </Flex>
       </Flex>

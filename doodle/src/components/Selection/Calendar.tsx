@@ -2,6 +2,7 @@ import { Flex } from "@chakra-ui/react";
 import React from "react";
 import CalendarEntry from "./CalendarEntry";
 
+// Pass in clicked props from parent component because this state is required through all of these components
 interface CalendarProps {
   isClicked: number;
   setIsClicked: React.Dispatch<React.SetStateAction<number>>;
@@ -9,6 +10,7 @@ interface CalendarProps {
 
 const Calendar: React.FC<CalendarProps> = ({ isClicked, setIsClicked }) => {
   return (
+    // Hard code calendar entries and their data
     <Flex>
       <CalendarEntry
         day="Mon"
