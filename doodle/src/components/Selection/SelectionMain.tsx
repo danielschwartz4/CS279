@@ -1,4 +1,4 @@
-import { Box, Heading, Text } from "@chakra-ui/react";
+import { Box, Flex, Heading, HStack, Text, VStack } from "@chakra-ui/react";
 import React from "react";
 import Calendar from "./Calendar";
 import CheckBoxGrid from "./CheckBoxGrid";
@@ -14,11 +14,21 @@ const Selection: React.FC<SelectionProps> = ({}) => {
         </Heading>
         <Text>We’ll let you know when the organizer picks the best time</Text>
       </Box>
-      <Box mt={"90px"} mr={"0px"} maxW={"500px"} ml={"auto"}>
-        <Calendar></Calendar>
-        <Box mt={4}>
-          <CheckBoxGrid></CheckBoxGrid>
-        </Box>
+      <Box>
+        <Flex mt={"90px"}>
+          <VStack alignItems={"left"} spacing={9} ml={16} mb={2} mt={"auto"}>
+            <Text textAlign={"left"}>Daniel (Organizer)</Text>
+            <Text textAlign={"left"}>Jake</Text>
+            <Text>Lizzy</Text>
+          </VStack>
+
+          <Box mr={"24px"} maxW={"500px"} ml={"auto"}>
+            <Calendar></Calendar>
+            <Box mt={4}>
+              <CheckBoxGrid></CheckBoxGrid>
+            </Box>
+          </Box>
+        </Flex>
       </Box>
     </Box>
   );
