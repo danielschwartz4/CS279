@@ -14,7 +14,7 @@ const Selection: React.FC<SelectionProps> = ({}) => {
         </Heading>
         <Text>We’ll let you know when the organizer picks the best time</Text>
       </Box>
-      <Box mt={"50px"} mr={"40px"} maxW={"500px"} ml={"auto"}>
+      <Box mt={"90px"} mr={"0px"} maxW={"500px"} ml={"auto"}>
         <Calendar></Calendar>
         <Box mt={4}>
           <CheckBoxGrid></CheckBoxGrid>

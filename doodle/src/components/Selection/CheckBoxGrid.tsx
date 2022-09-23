@@ -1,6 +1,7 @@
 import { Grid } from "@chakra-ui/react";
 import React from "react";
 import CheckBox from "./CheckBox";
+import CountBox from "./CountBox";
 
 interface CheckBoxGridProps {}
 
@@ -12,6 +13,11 @@ const CheckGridBox: React.FC<CheckBoxGridProps> = ({}) => {
       w={"450px"}
       h={"226px"}
     >
+      <CountBox count={2} />
+      <CountBox count={1} />
+      <CountBox count={0} />
+      <CountBox count={1} />
+      <CountBox count={2} />
       <CheckBox type="yes"></CheckBox>
       <CheckBox type="yes"></CheckBox>
       <CheckBox type="yes"></CheckBox>
