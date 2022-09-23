@@ -6,7 +6,10 @@ interface HomeProps {}
 
 const Home: React.FC<HomeProps> = ({}) => {
   return (
+    // Set a min view port height so background always covers entire screen
+
     <Center minH={"100vh"} bgColor={"gray.200"}>
+      {/* Confirmation component */}
       <SelectionMain></SelectionMain>
     </Center>
   );

@@ -7,6 +7,4 @@ How to use:
 5. Press continue to enter your identification information, and bask in the confetti
 6. Press "Submit Response" and you will be presented the option to go home
 
-Reflection:
-
 I did not consult external code, other than documentation, in making this prototype.
