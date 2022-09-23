@@ -15,6 +15,7 @@ export type checkType = "no" | "maybe" | "yes";
 
 const CalendarEntry: React.FC<CalendarEntryProps> = (props) => {
   const [checkState, setCheckState] = useState<checkType>("no");
+  const [mouseOver, setMouseOver] = useState<boolean>(false);
 
   useEffect(() => {
     if (props.isClicked === 0 && checkState === "no") {
@@ -30,11 +31,27 @@ const CalendarEntry: React.FC<CalendarEntryProps> = (props) => {
 
   return (
     <VStack
+      onClick={() => {
+        checkState === "no"
+          ? setCheckState("yes")
+          : checkState === "yes"
+          ? setCheckState("maybe")
+          : setCheckState("no");
+      }}
+      onMouseEnter={() => {
+        setMouseOver(true);
+      }}
+      onMouseLeave={() => {
+        setMouseOver(false);
+      }}
+      cursor={"pointer"}
       backgroundColor={
         checkState === "yes"
           ? "#33a93399"
           : checkState === "maybe"
           ? "#ada53366"
+          : checkState === "no" && mouseOver === true
+          ? "#b1b1ae66"
           : ""
       }
       opacity="50%"

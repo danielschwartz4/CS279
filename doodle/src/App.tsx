@@ -8,7 +8,7 @@ export const App = () => (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="confirmation" element={<ConfirmationPage />} />
+        <Route path="/confirmation" element={<ConfirmationPage />} />
       </Routes>
     </BrowserRouter>
   </ChakraProvider>

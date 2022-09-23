@@ -8,6 +8,7 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import Calendar from "./Calendar";
 import CheckBoxGrid from "./CheckBoxGrid";
 
@@ -56,7 +57,7 @@ const SelectionMain: React.FC<SelectionProps> = ({}) => {
           ml={8}
           w={"100px"}
         >
-          Decline
+          <Link to="/confirmation">Decline</Link>
         </Button>
         <Button
           textColor={isClicked ? "white" : "gray.400"}
@@ -65,8 +66,7 @@ const SelectionMain: React.FC<SelectionProps> = ({}) => {
           mr={8}
           w={"100px"}
         >
-          {" "}
-          Continue
+          <Link to="/confirmation">Continue</Link>
         </Button>
       </Flex>
     </Box>
