@@ -9,7 +9,7 @@ interface CalendarEntryProps {
   endTime: string;
 }
 
-type checkType = "no" | "maybe" | "yes";
+export type checkType = "no" | "maybe" | "yes";
 
 const CalendarEntry: React.FC<CalendarEntryProps> = (props) => {
   const [checkState, setCheckState] = useState<checkType>("no");
@@ -24,11 +24,11 @@ const CalendarEntry: React.FC<CalendarEntryProps> = (props) => {
           : ""
       }
       opacity="50%"
-      width={"100px"}
-      height={"250px"}
+      width={"90px"}
+      height={"202px"}
     >
       <Box textColor={"gray"}>{props.day}</Box>
-      <Box fontSize={"24px"}>
+      <Box fontSize={"28px"}>
         <b>{props.date}</b>
       </Box>
       <Box textColor={"gray"}>{props.month}</Box>
@@ -50,6 +50,7 @@ const CalendarEntry: React.FC<CalendarEntryProps> = (props) => {
           }}
           colorScheme={checkState === "yes" ? "green" : "yellow"}
           size={"lg"}
+          border={"2px"}
           defaultChecked={false}
         ></Checkbox>
       </Box>
