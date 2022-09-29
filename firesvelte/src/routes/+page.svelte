@@ -116,13 +116,16 @@
 				</button>
 			</span>
 		</li>
+		<!-- Default for no todos -->
 		{:else}
 			<p>No todos found</p>
 	{/each}
 </ol>
 
+<!-- Add event listeners with svelte -->
 <svelte:window on:keydown={keyIsPressed} />
 
+<!-- CSS -->
 <style>
 	.complete {
 		text-decoration: line-through;
