@@ -1,3 +1,4 @@
+// Firebase config variables. Terrible practice to have them in an exposed file like this but no harm done if someone steals these credentials
 export const firebaseConfig = {
 	apiKey: 'AIzaSyCytBaBHQ5vL71ZySbuJ-mDoCPafpqiU_w',
 	authDomain: 'cs279-de645.firebaseapp.com',

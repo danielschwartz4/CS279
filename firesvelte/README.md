@@ -1,38 +1,11 @@
-# create-svelte
+In this todo app, we use javascript, Svelte, and Firebase as a database
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+How to use:
 
-## Creating a project
+1. Clone github repo
+2. run "npm i" to install the node_modules
+3. Copy your config variables into firebaseConfig.js (or use mine)
+4. run "npm run dev" as defined in package.json
+5.
 
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+Source: code comes from the tutorial at https://www.youtube.com/watch?v=yLwwJtCFDNo&list=PLm_Qt4aKpfKiGbdjaHdOpry6Neza0etxZ&index=1&ab_channel=WebJeda
