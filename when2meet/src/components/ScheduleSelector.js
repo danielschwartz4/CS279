@@ -11,7 +11,8 @@ const ScheduleSelectorComponent = ({ schedule, handleChange }) => {
       timeFormat={'h:mm A'}
       dateFormat={'ddd'}
       onChange={handleChange}
-      selectedColor={'rgba(84, 161, 8, 0.4);'}
+      selectedColor={'rgba(84, 161, 8, 0.4)'}
+      unselectedColor={'rgba(255,221,222,255)'}
     />
   );
 };

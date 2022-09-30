@@ -9,8 +9,8 @@ const Dash = () => {
   };
 
   return (
-    <Flex width={'100vw'} justify={'space-between'}>
-      <Box ml={100}>
+    <Flex>
+      <Box mr={12}>
         <Availability
           instructions={'Click and drag to toggle; saved immediately'}
           heading="Your availability"
@@ -19,7 +19,7 @@ const Dash = () => {
           handleChange={handleChange}
         />
       </Box>
-      <Box mr={100}>
+      <Box ml={12}>
         <Availability
           instructions={"Mouseover the calendar to see who's"}
           heading="Group's availability"
