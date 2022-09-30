@@ -1,6 +1,7 @@
 import ScheduleSelector from 'react-schedule-selector';
 import { seed1, seed2, seed3 } from './seeds';
 
+// Hard coded schedules with opaque colors to accommodate for stacking
 export const Schedule1 = () => {
   return (
     <ScheduleSelector
@@ -17,7 +18,7 @@ export const Schedule1 = () => {
   );
 };
 
-export const Schedule2 = ({ seed }) => {
+export const Schedule2 = () => {
   return (
     <ScheduleSelector
       selection={seed2}
@@ -33,7 +34,7 @@ export const Schedule2 = ({ seed }) => {
   );
 };
 
-export const Schedule3 = ({ seed }) => {
+export const Schedule3 = () => {
   return (
     <ScheduleSelector
       selection={seed3}

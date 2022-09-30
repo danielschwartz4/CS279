@@ -2,6 +2,7 @@ import { Box, Flex, Heading, Stack, Text } from '@chakra-ui/react';
 import { Schedule1, Schedule2, Schedule3 } from '../seedData/schedules';
 import ScheduleSelectorComponent from './ScheduleSelector';
 
+// Component for each half of the dashboard
 const Availability = ({
   heading,
   instructions,
@@ -19,9 +20,11 @@ const Availability = ({
         {heading}
       </Heading>
       <Flex justify={'space-between'}>
+        {/* Check which side of the dash with isGroup */}
         {!isGroup ? (
           <>
             <Flex alignItems={'center'} ml={20}>
+              {/* Create the key for the left side */}
               <Text>Unavailable</Text>
               <Box
                 ml={1}
@@ -40,7 +43,8 @@ const Availability = ({
               />
             </Flex>
           </>
-        ) : schedule.length === 0 ? (
+        ) : // Create the key for both sides, adding a shade once the user has altered their schedule
+        schedule.length === 0 ? (
           <Flex ml={12} alignItems={'center'} mr={20}>
             <Text mr={2}>0/3 Available</Text>
             <Flex border={'1px'}>
@@ -64,12 +68,16 @@ const Availability = ({
         )}
       </Flex>
       <Text>{instructions}</Text>
+      {/* On left side have one ScheduleSelectorComponent */}
       {!isGroup ? (
         <ScheduleSelectorComponent
           schedule={schedule}
           handleChange={handleChange}
         />
       ) : (
+        // Here, to simulate the overlay of peoples' schedules by shade of green, I stack them with a low opacity.
+        // We have 3 seed schedules AND a copy of the left schedule stacked so that changing the left schedule will change
+        // shades of the right since the copy is opaque as well
         <Box>
           <Box position={'absolute'}>
             <ScheduleSelectorComponent

@@ -1,3 +1,5 @@
+// Seed schedule data
+// I obtained the seed data by logging the schedule state and converting the output to an array of strings with .toString().split(',)
 export const seed1 = [
   'Fri Sep 30 2022 10:00:00 GMT-0400 (Eastern Daylight Time)',
   'Fri Sep 30 2022 10:30:00 GMT-0400 (Eastern Daylight Time)',
