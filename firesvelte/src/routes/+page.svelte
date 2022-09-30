@@ -96,7 +96,7 @@
 
 <!-- Main HTML -->
 <div class="main">
-	<div style="width: {((1 - weight) * 100) + 50}px; background-color: {pickHex([0,0,0],[255,255,255],weight)}" 
+	<div style="width: {((1 - weight) * 400) + 50}px; background-color: {pickHex([0,0,0],[255,255,255],weight)}" 
 							class="progress-bar"
 	> 
 	</div>
