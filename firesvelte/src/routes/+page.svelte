@@ -14,6 +14,7 @@
 	const colRef = browser && collection(db, "todos")
 
 	let todos = []
+	let weight ;
 
 	// Init todos from database on frontend
 	const fbAddtodo = browser && onSnapshot(colRef, (querySnapshot) => {
@@ -25,6 +26,9 @@
 		})
 		// set global todos variable to database data
 		todos = fbTodos
+		const completed = todos.filter((item) => item.isComplete == true)
+		weight = completed.length / todos.length
+		console.log(weight)
 	})
 
 	let task = ""
@@ -50,6 +54,7 @@
 		})
 		// Reset task once submitted
 		task = ""
+		console.log(weight)
 	}
 
 	// Mark todo as complete by updating isComplete for relevent document
@@ -76,51 +81,69 @@
 			addTodo()
 		}
 	}
+
+	function pickHex(color1, color2, weight) {
+    var w1 = weight;
+    var w2 = 1 - w1;
+    var rgb = [Math.round(color1[0] * w1 + color2[0] * w2),
+        Math.round(color1[1] * w1 + color2[1] * w2),
+        Math.round(color1[2] * w1 + color2[2] * w2)];
+    return `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;
+	}
+	console.log(pickHex([0,0,0],[255,255,255],.5))
 </script>
 
 
 <!-- Main HTML -->
-<!-- bind:value sets task value to current input value -->
-<input type="text" placeholder="Add a task" bind:value={task}/>
-<!-- Add todo function on click -->
-<button on:click={addTodo}>Add</button>
-<!-- List todos -->
-<ol>
-	<!-- Svelte syntax for listing items with for loop -->
-	{#each todos as item}
-		<li>
-			<!-- Class for referencing CSS -->
-			<span class:complete={item.isComplete}>
-				<!-- Display each item task value -->
-				{item.task}
-			</span>
-			<span>
-				<button style="margin-left: 4px; 
-											background-color: transparent; 
-											border: none; 
-											cursor: pointer" on:click={() =>
-											// Call todo update syntax
-												 markTodoAsComplete(item)}>
-						<!-- Syntax for ternary operation syntax -->
-						{
-							
-							item.isComplete ? "🟢" : "✅"
-						}
-				</button>
-				<!-- Call delete function -->
-				<button style="background-color: transparent; 
-											border: none;
-											cursor: pointer" on:click={() => 
-											deleteTodo(item)}>
-					🗑
-				</button>
-			</span>
-		</li>
-		<!-- Default for no todos -->
-		{:else}
-			<p>No todos found</p>
-	{/each}
-</ol>
+<div class="main">
+	<div style="width: {((1 - weight) * 100) + 50}px; background-color: {pickHex([0,0,0],[255,255,255],weight)}" 
+							class="progress-bar"
+	> 
+	</div>
+	<div class="content">
+		<!-- bind:value sets task value to current input value -->
+		<input type="text" placeholder="Add a task" bind:value={task}/>
+		<!-- Add todo function on click -->
+		<button on:click={addTodo}>Add</button>
+		<!-- List todos -->
+		<ol>
+			<!-- Svelte syntax for listing items with for loop -->
+			{#each todos as item}
+				<li>
+					<!-- Class for referencing CSS -->
+					<span class:complete={item.isComplete}>
+						<!-- Display each item task value -->
+						{item.task}
+					</span>
+					<span>
+						<button style="margin-left: 4px; 
+													background-color: transparent; 
+													border: none; 
+													cursor: pointer" on:click={() =>
+													// Call todo update syntax
+														markTodoAsComplete(item)}>
+								<!-- Syntax for ternary operation syntax -->
+								{
+									
+									item.isComplete ? "🟢" : "✅"
+								}
+						</button>
+						<!-- Call delete function -->
+						<button style="background-color: transparent; 
+													border: none;
+													cursor: pointer" on:click={() => 
+													deleteTodo(item)}>
+							🗑
+						</button>
+					</span>
+				</li>
+				<!-- Default for no todos -->
+				{:else}
+					<p>No todos found</p>
+			{/each}
+		</ol>
+	</div>
+</div>
 
 <!-- Add event listeners with svelte -->
 <svelte:window on:keydown={keyIsPressed} />
@@ -129,5 +152,33 @@
 <style>
 	.complete {
 		text-decoration: line-through;
+	}
+	.main {
+		background: #000;
+		height: 100vh;
+		width: 100vw;
+		position: absolute;
+		margin: -8px;
+	}
+	.content {
+		background-color: rgb(255, 255, 255);
+		/* color: rgb(0, 0, 0); */
+		width: fit-content;
+		height: fit-content;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 400px;
+		padding: 12px;
+		border-radius: 8px;
+	}
+
+	.progress-bar {
+		/* width: fit-content; */
+		margin-left: 50vh;
+		justify-content: center;
+		position: absolute;
+		margin-top: 300px;
+		height: 5px;
+		background: rgb(255, 255, 255);
 	}
 </style>

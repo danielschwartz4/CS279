@@ -8,4 +8,4 @@ How to use:
 4. run "npm run dev" as defined in package.json
 5.
 
-Source: code comes from the tutorial at https://www.youtube.com/watch?v=yLwwJtCFDNo&list=PLm_Qt4aKpfKiGbdjaHdOpry6Neza0etxZ&index=1&ab_channel=WebJeda
+Source: code adapted from the tutorial at https://www.youtube.com/watch?v=yLwwJtCFDNo&list=PLm_Qt4aKpfKiGbdjaHdOpry6Neza0etxZ&index=1&ab_channel=WebJeda
