@@ -10,3 +10,5 @@ How to use:
 I used javascript, React, and Chakra UI library because it's flexible, robust, and I've used it before
 
 I did not consult any external code, but I did use this library for the calendar: https://www.npmjs.com/package/react-schedule-selector
+
+<img width="1443" alt="Screen Shot 2022-09-30 at 13 35 09" src="https://user-images.githubusercontent.com/52050264/193325666-7be61c32-0c15-4d65-a856-ed389bc5d706.png">
