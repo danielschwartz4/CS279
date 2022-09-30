@@ -164,19 +164,19 @@
 		background-color: rgb(255, 255, 255);
 		/* color: rgb(0, 0, 0); */
 		width: fit-content;
-		height: fit-content;
+		/* height: fit-content; */
 		margin-left: auto;
 		margin-right: auto;
-		margin-top: 400px;
+		margin-top: 200px;
 		padding: 12px;
 		border-radius: 8px;
 	}
 
 	.progress-bar {
-		/* width: fit-content; */
-		margin-left: 50vh;
-		justify-content: center;
-		position: absolute;
+		width: fit-content;
+		margin-left: 30%;
+		/* justify-content: center; */
+		/* position: absolute; */
 		margin-top: 300px;
 		height: 5px;
 		background: rgb(255, 255, 255);
