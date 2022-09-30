@@ -4,7 +4,7 @@ How to use:
 
 1. Clone github repo
 2. run "npm i" to install the node_modules
-3. Copy your config variables into firebaseConfig.js (or use mine)
+3. Copy your config variables into firebaseConfig.js (or use mine (not good practice))
 4. run "npm run dev" as defined in package.json
 5. Add, delete, check off todos
 6. As you check off todos, the progress bar will grow and shrink. The color of the bar will also begin to blend in with the background until you check off all tasks and it disappears!

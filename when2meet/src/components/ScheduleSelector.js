@@ -1,24 +1,22 @@
-import { useState } from 'react';
 import ScheduleSelector from 'react-schedule-selector';
-import { Box } from '@chakra-ui/react';
 
-const ScheduleSelectorComponent = () => {
-  const [schedule, setSchedule] = useState([]);
-  const handleChange = newSchedule => {
-    setSchedule(newSchedule);
-  };
-  console.log(schedule);
+const ScheduleSelectorComponent = ({ schedule, handleChange }) => {
+  // const [schedule, setSchedule] = useState([]);
+  // const handleChange = newSchedule => {
+  //   setSchedule(newSchedule);
+  // };
+  // console.log(schedule);
   return (
-    <Box>
-      <ScheduleSelector
-        selection={schedule}
-        numDays={7}
-        minTime={8}
-        maxTime={22}
-        hourlyChunks={1}
-        onChange={handleChange}
-      />
-    </Box>
+    <ScheduleSelector
+      selection={schedule}
+      numDays={7}
+      minTime={9}
+      maxTime={18}
+      hourlyChunks={2}
+      timeFormat={'h:mm A'}
+      dateFormat={'ddd'}
+      onChange={handleChange}
+    />
   );
 };
 
