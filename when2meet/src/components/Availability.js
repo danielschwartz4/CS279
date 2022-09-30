@@ -1,4 +1,5 @@
-import { Heading, Stack, Flex, Text, Box } from '@chakra-ui/react';
+import { Box, Flex, Heading, Stack, Text } from '@chakra-ui/react';
+import { Schedule1, Schedule2, Schedule3 } from '../seedData/schedules';
 import ScheduleSelectorComponent from './ScheduleSelector';
 
 const Availability = ({
@@ -39,10 +40,30 @@ const Availability = ({
         )}
       </Flex>
       <Text>{instructions}</Text>
-      <ScheduleSelectorComponent
-        schedule={schedule}
-        handleChange={handleChange}
-      />
+      {!isGroup ? (
+        <ScheduleSelectorComponent
+          schedule={schedule}
+          handleChange={handleChange}
+        />
+      ) : (
+        <Box>
+          <Box position={'absolute'}>
+            <ScheduleSelectorComponent
+              schedule={schedule}
+              handleChange={handleChange}
+            />
+          </Box>
+          <Box position={'absolute'}>
+            <Schedule1 />
+          </Box>
+          <Box position={'absolute'}>
+            <Schedule2 />
+          </Box>
+          <Box position={'absolute'}>
+            <Schedule3 />
+          </Box>
+        </Box>
+      )}
     </Stack>
   );
 };

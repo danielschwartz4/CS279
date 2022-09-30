@@ -1,11 +1,6 @@
 import ScheduleSelector from 'react-schedule-selector';
 
 const ScheduleSelectorComponent = ({ schedule, handleChange }) => {
-  // const [schedule, setSchedule] = useState([]);
-  // const handleChange = newSchedule => {
-  //   setSchedule(newSchedule);
-  // };
-  // console.log(schedule);
   return (
     <ScheduleSelector
       selection={schedule}
@@ -16,6 +11,7 @@ const ScheduleSelectorComponent = ({ schedule, handleChange }) => {
       timeFormat={'h:mm A'}
       dateFormat={'ddd'}
       onChange={handleChange}
+      selectedColor={'rgba(84, 161, 8, 0.4);'}
     />
   );
 };
