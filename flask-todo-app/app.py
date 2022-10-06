@@ -12,6 +12,7 @@ db = SQLAlchemy(app)
 class Todo(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(80))
+    priority = db.Column(db.Integer)
     complete = db.Column(db.Boolean)
 
 
@@ -20,12 +21,11 @@ def index():
     todo_list = Todo.query.all()
     return render_template("index.html", todo_list=todo_list)
 
-
 @app.route("/add", methods=["POST"])
 def add():
-    print(request.form)
     title = request.form.get("title")
-    new_todo = Todo(title=title, complete=False)
+    priority = request.form.get("priority")
+    new_todo = Todo(title=title, priority=priority, complete=False)
     db.session.add(new_todo)
     db.session.commit()
     return redirect(url_for("index"))

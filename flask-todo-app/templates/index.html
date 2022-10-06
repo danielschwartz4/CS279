@@ -19,7 +19,7 @@
     <div class="container" style="margin-top: 100px">
       <h3>Todo List</h3>
       <hr />
-      <form action="/add" method="post">
+      <form action="/add" method="post" id="todo-form">
         <div style="display: flex; align-items: center" class="form-group">
           <div>
             <label for="title">Todo Title</label>
@@ -41,10 +41,11 @@
                 border-radius: 4px;
               "
               id="priority"
+              name="priority"
             >
-              <option value="volvo">High</option>
-              <option value="saab">Medium</option>
-              <option value="opel">Low</option>
+              <option value="1">High</option>
+              <option value="2">Medium</option>
+              <option value="3">Low</option>
             </select>
           </div>
           <button
@@ -74,7 +75,14 @@
         <tbody>
           {% for todo in todo_list %}
           <tr>
-            <th scope="row">{{ todo.id }}</th>
+            {% if todo.priority == 1 %}
+            <th scope="row">🔴</th>
+            {% elif todo.priority == 2 %}
+            <th scope="row">🟡</th>
+            {% else %}
+            <th scope="row">🟢</th>
+            {% endif %}
+
             <td>{{ todo.title }}</td>
             {% if todo.complete == False %}
             <td><span class="badge badge-danger">Not Complete</span></td>
