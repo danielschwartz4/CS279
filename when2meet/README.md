@@ -10,3 +10,4 @@ How to use:
 I used javascript, React, and Chakra UI library because it's flexible, robust, and I've used it before
 
 I did not consult any external code, but I did use this library for the calendar: https://www.npmjs.com/package/react-schedule-selector
+
