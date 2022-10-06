@@ -9,7 +9,6 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:////" + DATABASE
 db = SQLAlchemy(app)
 
-
 class Todo(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(80))
@@ -24,6 +23,7 @@ def index():
 
 @app.route("/add", methods=["POST"])
 def add():
+    print(request.form)
     title = request.form.get("title")
     new_todo = Todo(title=title, complete=False)
     db.session.add(new_todo)
