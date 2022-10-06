@@ -1,12 +1,11 @@
-### Simple Flask Todo App
+How to use:
 
-#### Setup
-<hr>
+1. Clone github repo
+2. Run 'pip install -r requirements.txt' on terminal
+3. Run app.py on terminal for start local server
+4.
 
-- Create python3 virtual environment and activate it (python3 -m venv venv)
-- Run 'pip install -r requirements.txt' on terminal
-- Run app.py on terminal for start local server
+Reflection: What are the significant software concepts that this combination of technologies has that each previous set of technologies did not? Or that they handle significantly differently?
 
-<hr>
-
-![todo](templates/todo.png)
+Sources:
+• Code comes from: https://github.com/itzpradip/flutter-todo-app
