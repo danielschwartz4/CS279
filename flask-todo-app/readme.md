@@ -3,7 +3,6 @@ How to use:
 1. Clone github repo
 2. Run 'pip install -r requirements.txt' on terminal
 3. Run app.py on terminal for start local server
-4.
 
 I have added a color-coded prioritization feature that can show the user which of their tasks should be low, medium, or high priority.
 

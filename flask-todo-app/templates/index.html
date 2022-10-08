@@ -19,6 +19,7 @@
     <div class="container" style="margin-top: 100px">
       <h3>Todo List</h3>
       <hr />
+      <!-- Form hitting /add flask api endpoint -->
       <form action="/add" method="post" id="todo-form">
         <div style="display: flex; align-items: center" class="form-group">
           <div>
@@ -33,6 +34,7 @@
           </div>
           <div style="margin-left: 20px">
             <p style="margin-bottom: 8px">Priority</p>
+            <!-- Select priority for task -->
             <select
               style="
                 width: 203px;
@@ -58,6 +60,7 @@
           <br />
         </div>
       </form>
+      <!-- HTML template engine is the {% %} syntax -->
       {% if todo_list == [] %}
       <div class="alert alert-warning" role="alert">No Todo available</div>
       {% else %}
@@ -72,6 +75,7 @@
             <th scope="col">Delete</th>
           </tr>
         </thead>
+        <!-- Set priority symbol based on form priority value -->
         <tbody>
           {% for todo in todo_list %}
           <tr>
@@ -90,9 +94,11 @@
             <td><span class="badge badge-success">Completed</span></td>
             {% endif %}
             <td>
+              <!-- Complete endpoint -->
               <a href="/complete/{{ todo.id }}" class="btn btn-info">Update</a>
             </td>
             <td>
+              <!-- delete endpoint -->
               <a href="/delete/{{ todo.id }}" class="btn btn-danger">Delete</a>
             </td>
           </tr>
@@ -102,6 +108,7 @@
       {% endif %}
     </div>
 
+    <!-- Import necessary libraries -->
     <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
       integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
