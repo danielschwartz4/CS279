@@ -5,7 +5,7 @@ How to use:
 3. Run app.py on terminal for start local server
 4.
 
-I have added a color-coded prioritization feature that can show the user which of their tasks should be low, medium, and high priority.
+I have added a color-coded prioritization feature that can show the user which of their tasks should be low, medium, or high priority.
 
 What are the significant software concepts that this combination of technologies has that each previous set of technologies did not? Or that they handle significantly differently?
 
