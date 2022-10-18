@@ -19,7 +19,7 @@
   $: incompleteCount = useTracker(() =>TasksCollection.find(hideCompletedFilter).count());
 
   $: pendingTasksTitle = `${
-          incompleteCount ? ` (${$incompleteCount})` : ''
+          incompleteCount ? ` (${$incompleteCount} tasks left)` : ''
   }`;
   
 </script>
