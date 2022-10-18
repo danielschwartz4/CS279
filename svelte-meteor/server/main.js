@@ -1,6 +1,7 @@
 import { Meteor } from "meteor/meteor";
 import { TasksCollection } from "/imports/api/TasksCollection";
 
+// insert task into mongo collection function
 const insertTask = (taskText) => TasksCollection.insert({ text: taskText });
 
 // Seed mongo data

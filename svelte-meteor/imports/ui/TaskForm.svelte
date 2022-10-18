@@ -3,6 +3,7 @@
 
     let newTask = '';
 
+    // Submit form by inserting into mongo collection with text and createdAt data
     const handleSubmit = () => {
         // Insert a task into the collection
         TasksCollection.insert({
@@ -16,6 +17,7 @@
 </script>
 
 <form class="task-form" on:submit|preventDefault={handleSubmit}>
+    <!-- Set newTask to value of input to use in handleSubmit -->
     <input
             type="text"
             name="text"
