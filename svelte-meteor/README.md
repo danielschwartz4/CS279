@@ -3,6 +3,7 @@ How to use:
 1. Clone github repo
 2. Install meteor via https://docs.meteor.com/install.html
 3. Run npm i to install node_modules
+4. Run "meteor run" to start the application
 
 What are the significant software concepts that this combination of technologies has that each previous set of technologies did not? Or that they handle significantly differently?
 
