@@ -4,9 +4,8 @@
   import TaskForm from './TaskForm.svelte';
 
   import { useTracker } from 'meteor/rdb:svelte-meteor-data';
-  // $: tasks = useTracker(() => TasksCollection.find({}).fetch());
-  // $: tasks = TasksCollection.find({}, { sort: { createdAt: -1 } }).fetch()
-  let tasks = TasksCollection.find({}).fetch()
+  $: tasks = useTracker(() => TasksCollection.find({}, { sort: { createdAt: -1 }}).fetch());
+
   console.log(tasks)
 //  
 </script>
@@ -17,10 +16,10 @@
     <h1>Todo List</h1>
   </header>
 
-  <!-- <TaskForm /> -->
+  <TaskForm />
 
   <ul>
-    {#each tasks as task (task._id)}
+    {#each $tasks as task (task._id)}
         <Task task={task} />
     {/each}
   </ul>
